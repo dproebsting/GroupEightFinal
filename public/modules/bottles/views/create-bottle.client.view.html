@@ -1,0 +1,92 @@
+<section data-ng-controller="BottlesController">
+    <div class="page-header">
+        <h1>New feeding Time</h1>
+    </div>
+
+    <div class="col-md-12">
+        <form class="" data-ng-submit="create()" novalidate>
+            <fieldset>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <i class="glyphicon glyphicon-bold bot-profile" ng-class="{'text-success': bottle, 'text-default': !bottle}"></i>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="bottle">Bottle</label>
+                            <div class="controls">
+                                <input type="checkbox" data-ng-model="bottle" id="bottle" class="form-control checkbox">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        OR
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-3">
+                        <i class="glyphicon glyphicon-tint bot-profile" ng-class="{'text-success': breast, 'text-default': !breast}"></i>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label class="control-label" for="breast">Breast</label>
+                            <div class="controls">
+                                <input type="checkbox" data-ng-model="breast" id="breast" class="form-control checkbox">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="SpecificTime">Please specify feeding time:</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="SpecificTime" id="SpecificTime" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="amount">Please specify amount:</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="amount" id="amount" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label class="control-label" for="comment">Additional Comments:</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="name" id="comment" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">
+                        Save Entry
+                    </button>
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>

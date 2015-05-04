@@ -1,0 +1,50 @@
+<section data-ng-controller="BottlesController as bottlesCtrl"">
+<div class="page-header">
+    <h1>Bottles</h1>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-8">
+        <div class="input-group input-group-lg">
+            <input type="text" class="form-control" ng-model="searchText" placeholder="Search by Name or Year">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                  </span>
+        </div><!-- /input-group -->
+    </div>
+
+    <div class="col-xs-12 col-sm-4 text-center">
+        <button type="button" class="btn btn-success text-center">
+            <i class="glyphicon glyphicon-leaf"></i> <br>
+            New Feeding Entry
+        </button>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="list-group">
+    <div class="col-xs-6 col-sm-4" data-ng-repeat= "bottle in bottlesCtrl.bottles | filter:searchText">
+        <a ng-click="bottlesCtrl.modalUpdate('lg', bottle)" class="list-group-item">
+
+            <h4 class="bot-list text-center">
+                <i class="glyphicon glyphicon-leaf"></i>
+            </h4>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <h4>{{bottle.bottle}} {{bottle.breast}}</h4>
+                    <small class="list-group-item-text text-muted">
+                        <span data-ng-bind="bottle.created | date:'medium' | filter:searchText"></span>
+                    </small>
+                </div>
+            </div>
+
+        </a>
+    </div>
+
+
+</div>
+<div class="alert alert-warning text-center" data-ng-hide="!bottles.$resolved || bottles.length">
+    No Customers yet, why don't you <a href="/#!/bottles/create">create one</a>?
+</div>
+</section>
